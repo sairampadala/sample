@@ -61,11 +61,9 @@ var button10=document.createElement('button');
 button10.setAttribute('class','col-1 bg-warning');
 button10.innerHTML='10';
 
-
-
 row.append(previous,button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,next);
 container.append(row);
-document.body.append(container);
+document.getElementById("paginationBlock").append(container);
 
 function onClickData(){
     fetch('https://raw.githubusercontent.com/Rajavasanthan/jsondata/master/pagenation.json')
@@ -108,7 +106,7 @@ function onClickData(){
                 tabCell.innerHTML = data[i][col[j]];
             }
         }
-        var divContainer = document.getElementById("showData");
+        var divContainer = document.getElementById("showTable");
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
     }
